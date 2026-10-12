@@ -1,0 +1,19 @@
+{
+  "name": "novacrest-qna",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "postCreateCommand": "pip install -r backend/requirements.txt -r frontend/requirements.txt",
+  "forwardPorts": [
+    7860,
+    8501
+  ],
+  "portsAttributes": {
+    "7860": {
+      "label": "Backend (Flask)",
+      "visibility": "public"
+    },
+    "8501": {
+      "label": "Frontend (Streamlit)",
+      "visibility": "public"
+    }
+  }
+}
