@@ -1,7 +1,9 @@
 {
   "name": "novacrest-qna",
-  "image": "mcr.microsoft.com/devcontainers/python:3.13",
-  "postCreateCommand": "pip install -r backend/requirements.txt -r frontend/requirements.txt",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
   "forwardPorts": [
     7860,
     8501
@@ -15,5 +17,6 @@
       "label": "Frontend (Streamlit)",
       "visibility": "public"
     }
-  }
+  },
+  "postCreateCommand": "docker compose up -d --build"
 }
