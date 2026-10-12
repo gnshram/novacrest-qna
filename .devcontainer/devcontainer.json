@@ -17,5 +17,5 @@
       "visibility": "public"
     }
   },
-  "postCreateCommand": "docker compose up -d --build"
+  "postCreateCommand": "until docker info >/dev/null 2>&1; do echo 'Waiting for Docker daemon...'; sleep 1; done; docker compose up -d --build"
 }
